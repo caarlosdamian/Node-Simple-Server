@@ -1,7 +1,8 @@
-const http =  require ('http');
- const server =http.createServer((req ,res )=>{
-     res.end('Probando AWS')
- })
+const express = require("express");
 
- server.listen(3000)
- console.log('Server runnign port:3000')
+const app = express();
+
+app.get("/", (req, res) => res.send("Probando AWS con Express"));
+
+app.listen(3000);
+console.log("Server runnign port:3000");
