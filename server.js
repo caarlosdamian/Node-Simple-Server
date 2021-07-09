@@ -8,7 +8,7 @@ app.use(express.json());
 
 db = mysql.createConnection({
   user: "root",
-  host: "localhost",
+  host: "http://3.131.169.196/:3306",
   password: "carlos",
   database: "crudsysterm",
 });
