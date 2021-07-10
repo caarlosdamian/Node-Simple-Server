@@ -2,5 +2,5 @@
   WORKDIR /app
   COPY . .
   EXPOSE 3000
-  RUN npm insall
+  RUN npm install
   CMD ["npm","start"]
