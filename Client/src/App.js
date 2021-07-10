@@ -1,9 +1,23 @@
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./components/pages/Home";
+import Employee from "./components/pages/Employees";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
 
 function App() {
   return (
     <div className="App">
-    <h1>Testin Docker deploy</h1>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/Employees" exact component={Employee} />
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }
