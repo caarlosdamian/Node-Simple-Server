@@ -43,7 +43,7 @@ function Employees() {
   });
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/employee").then((response) => {
+    Axios.get("http://3.131.169.196:3001/employee").then((response) => {
       setEmployeeList(response.data);
       console.log(response);
     });
@@ -59,7 +59,7 @@ function Employees() {
   };
 
   const AddEmployee = () => {
-    Axios.post("http://localhost:3001/create", {
+    Axios.post("http://3.131.169.196:3001/create", {
       name: name,
       age: age,
       country: country,
@@ -67,7 +67,7 @@ function Employees() {
       wage: wage,
     }).then(
       () => {
-        Axios.get("http://localhost:3001/employee").then((response) => {
+        Axios.get("http://3.131.169.196:3001/employee").then((response) => {
           setEmployeeList(response.data);
           swal("Empleado Agregado", {
             icon: "success",
@@ -84,7 +84,7 @@ function Employees() {
   const updateEmployee = (id) => {
     console.log(employeeSelected.id);
     setModalEdit(false);
-    Axios.put(`http://localhost:3001/employee`, {
+    Axios.put(`http://3.131.169.196:3001/employee`, {
       id: id,
       name: newName,
       age: newAge,
@@ -93,7 +93,7 @@ function Employees() {
       wage: newWage,
     }).then(
       () => {
-        Axios.get(`http://localhost:3001/employee/${id}`).then((response) => {
+        Axios.get(`http://3.131.169.196:3001/employee/${id}`).then((response) => {
           setEmployeeList(response.data);
           setName("");
           setNewCountry("");
@@ -114,7 +114,7 @@ function Employees() {
   };
 
   const deleteEmployee = (id) => {
-    Axios.delete(`http://localhost:3001/employee/${id}`).then((res) => {
+    Axios.delete(`http://3.131.169.196:3001/employee/${id}`).then((res) => {
       setEmployeeList(
         employeeList.filter((val) => {
           return val.id !== id;
