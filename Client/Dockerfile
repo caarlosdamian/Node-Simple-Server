@@ -1,6 +1,5 @@
   FROM node:16.4-alpine
-  WORKDIR /Client
-  ENV PATH='./node_modules/.bin:$PATH'
-  COPY . .
-  RUN npm run build
+  WORKDIR /app
+  COPY package.json .
+  RUN npm install
   CMD ["npm","start"]
