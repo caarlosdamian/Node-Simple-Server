@@ -2,5 +2,5 @@
   WORKDIR /Client
   ENV PATH='./node_modules/.bin:$PATH'
   COPY package.json yarn.lock ./
-  RUN npm
+  RUN npm run build
   CMD ["npm","start"]
