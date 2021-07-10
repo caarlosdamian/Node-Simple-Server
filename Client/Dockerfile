@@ -1,5 +1,5 @@
   FROM node:16.4-alpine
   WORKDIR /app
   COPY package.json .
-  RUN npm run build
+  RUN npm install
   CMD ["npm","start"]
