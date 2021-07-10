@@ -2,8 +2,7 @@
   WORKDIR /Client
   ENV PATH='./node_modules/.bin:$PATH'
   COPY package.json yarn.lock ./
-  RUN yum update && yum install -y curl
-  RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-  RUN yum update && yum install -y nodejs
+  RUN curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+  RUN sudo yum install nodejs
   RUN npm run build
   CMD ["npm","start"]
